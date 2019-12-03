@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using JetBrains.Annotations;
 using JetBrains.Application.Infra;
+using JetBrains.Application.platforms;
 using JetBrains.Application.Threading;
 using JetBrains.Lifetimes;
 using JetBrains.ProjectModel;
@@ -187,7 +188,7 @@ namespace GammaJul.ReSharper.ForTea.Psi {
 				=> ProjectKind.MISC_FILES_PROJECT;
 
 			public T4ResolveProjectProperties([NotNull] TargetFrameworkId targetFrameworkId)
-				: base(EmptyList<Guid>.InstanceList, Guid.Empty, new[] { targetFrameworkId }, dotNetCoreSDK: null) {
+				: base(EmptyList<Guid>.InstanceList, Guid.Empty, new[] { targetFrameworkId },  DotNetCorePlatformInfo.Empty) {
 			}
 
 		}
